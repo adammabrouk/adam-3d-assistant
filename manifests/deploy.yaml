@@ -38,7 +38,7 @@ spec:
               command:
                 - "/bin/sh"
                 - "-c"
-                - "curl -X POST http://localhost:11434/api/pull -H 'Content-Type: application/json' -d '{\"name\": \"artifish/llama3.2-uncensored\"}'"
+                - "curl -X POST http://localhost:11434/api/pull -H 'Content-Type: application/json' -d '{\"name\": \"smollm:135m\"}'"
         resources:
           limits:
             memory: 50Mi
