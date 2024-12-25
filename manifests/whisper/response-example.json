@@ -1,0 +1,109 @@
+{
+    "task": "transcribe",
+    "language": "french",
+    "duration": 12.736000061035156,
+    "text": " bonjour, bienvenue sur un test de Whisper\n",
+    "segments": [
+        {
+            "id": 0,
+            "text": " bonjour, bienvenue sur un test de Whisper",
+            "start": 0.0,
+            "end": 7.0,
+            "tokens": [
+                4428,
+                8696,
+                11,
+                3610,
+                29307,
+                1022,
+                517,
+                1500,
+                368,
+                41132,
+                610
+            ],
+            "words": [
+                {
+                    "word": " bon",
+                    "start": 0.01,
+                    "end": 3.0,
+                    "t_dtw": -1,
+                    "probability": 0.19357724487781525
+                },
+                {
+                    "word": "jour",
+                    "start": 5.41,
+                    "end": 6.99,
+                    "t_dtw": -1,
+                    "probability": 0.9883157014846802
+                },
+                {
+                    "word": ",",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.26429852843284607
+                },
+                {
+                    "word": " bien",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.6710238456726074
+                },
+                {
+                    "word": "venue",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.8762975931167603
+                },
+                {
+                    "word": " sur",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.9933484196662903
+                },
+                {
+                    "word": " un",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.6127796173095703
+                },
+                {
+                    "word": " test",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.9451174736022949
+                },
+                {
+                    "word": " de",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.6731588840484619
+                },
+                {
+                    "word": " Whis",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.18616093695163727
+                },
+                {
+                    "word": "per",
+                    "start": 7.0,
+                    "end": 7.0,
+                    "t_dtw": -1,
+                    "probability": 0.9945712089538574
+                }
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.47313374280929565,
+            "no_speech_prob": 1.927475750562735e-05
+        }
+    ]
+}
