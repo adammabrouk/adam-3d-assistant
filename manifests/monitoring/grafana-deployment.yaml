@@ -30,7 +30,7 @@ spec:
       automountServiceAccountToken: false
       containers:
       - env: []
-        image: grafana/grafana:11.4.0
+        image: ghcr.io/lhns/grafana-babel:11.2.2
         name: grafana
         ports:
         - containerPort: 3000
