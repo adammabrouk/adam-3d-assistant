@@ -1,4 +1,3 @@
-
 import { HFModelConfig_v1, InterfaceHF } from "outetts";
 
 // Check if WebGPU is supported
@@ -55,4 +54,3 @@ self.addEventListener("message", async (e) => {
     const blob = new Blob([buffer], { type: "audio/wav" });
     self.postMessage({ status: "complete", audio: URL.createObjectURL(blob), text });
 });
-
