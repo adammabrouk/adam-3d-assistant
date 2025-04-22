@@ -7,7 +7,7 @@ from watchdog.observers.polling import PollingObserver  # Use PollingObserver fo
 from watchdog.events import FileSystemEventHandler
 
 # Configuration
-DIRECTORY_TO_WATCH = "/mnt/truenas/amabrouk"
+DIRECTORY_TO_WATCH = "/mnt/truenas/amabrouk/backend/watchservice"
 API_ENDPOINT = "http://127.0.0.1:8080/inference"
 RETRY_DELAY = 10  # Delay in seconds before retrying a failed request
 
