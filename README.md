@@ -1,6 +1,6 @@
 ## Project Overview
 
-This project is a homelab setup with k3s deployed, and various components including a 3D assistant in three.js, openvoice os, and more.
+This project is a homelab edge datacenter with `k3s` deployed, hosting a voice-enabled 3D assistant and other open-source components. It emphasizes **recycled hardware**, **self-hosted sovereignty**, and **cost-efficient infrastructure** for real-time AI and monitoring workloads.
 
 <table>
   <tr>
@@ -9,9 +9,58 @@ This project is a homelab setup with k3s deployed, and various components includ
   </tr>
 </table>
 
-## Project Structure
+## 🧱 Hardware & Edge Datacenter Composition
 
-The project is structured to isolate different components for better organization and maintainability. Below is an overview of the project structure:
+Your datacenter is composed of:
+
+### 🧠 Compute
+- 4× Intel NUCs (reconditioned)
+- 1× Raspberry Pi 5 + AI Hat Kit (workload offloading, e.g., audio inference)
+
+### 🗄️ Storage
+- 1× Reconditioned QNAP NAS with:
+  - 6× HDD drives
+  - MinIO as S3-compatible storage backend
+
+### 🌐 Networking
+- TP-Link Smart Managed Switch (VLANs and isolation)
+
+### 🛡️ Security & Monitoring
+- SnortML IDS (experimental setup for Zero-Day threat detection)
+- Prometheus + Grafana stack for real-time observability
+- Dashboard on recycled iPad (Grafana front)
+
+## 📊 Mermaid Diagram
+
+```mermaid
+flowchart TD
+  subgraph EdgeCluster["🏠 Home Datacenter Edge Setup"]
+    NUC1(NUC 1)
+    NUC2(NUC 2)
+    NUC3(NUC 3)
+    NUC4(NUC 4)
+    PI5(Raspberry Pi 5 + AI Hat)
+    NAS(QNAP NAS + MinIO)
+    Switch(TP-Link Managed Switch)
+    IDS(SnortML IDS)
+    Grafana[iPad Display with Grafana]
+  end
+
+  NUC1 -->|K3s Node| Switch
+  NUC2 -->|K3s Node| Switch
+  NUC3 -->|K3s Node| Switch
+  NUC4 -->|K3s Node| Switch
+  PI5 -->|Audio & AI Tasks| Switch
+  Switch --> NAS
+  IDS --> Switch
+  NAS -->|S3 API| NUC1
+  NAS -->|S3 API| NUC2
+  NAS -->|S3 API| NUC3
+  NAS -->|S3 API| NUC4
+  Switch --> Grafana
+```
+
+## Project Structure
 
 ```
 .
@@ -45,6 +94,7 @@ The project is structured to isolate different components for better organizatio
 
 ## Ollama Query example
 
+```bash
 curl http://localhost:11434/api/pull -d '{
   "name": "smollm:135m"
 }'
@@ -53,6 +103,7 @@ curl http://localhost:11434/api/generate -d '{
   "model": "smollm:135m",
   "prompt": "What is your name"
 }'
+```
 
 ## Installation / Management of Solr On Kubernetes
 
@@ -60,34 +111,19 @@ https://dan-niles.medium.com/setting-up-apache-solr-on-kubernetes-with-rancher-d
 
 ## 3D Assistant in three.js
 
-The 3D assistant is built using three.js and react-three-fiber. It includes an animated avatar that can perform various actions and respond to user inputs.
+The 3D assistant is built using **three.js** and **react-three-fiber**, featuring an animated avatar that lip-syncs and responds to user inputs.
 
 ### Key Components
+- `Avatar.jsx`: Manages 3D avatar animations and lip sync.
+- `Experience.jsx`: Orchestrates the scene, lights, and environment.
 
-- `Avatar.jsx`: This component handles the 3D model of the avatar, including animations and lip-syncing.
-- `Experience.jsx`: This component sets up the 3D scene, including lighting and environment.
-
-### Usage
-
-To run the 3D assistant, navigate to the `src/frontend` directory and run the following commands:
-
+### Run Locally
 ```bash
+cd src/frontend
 npm install
 npm run dev
 ```
 
-## Openvoice OS
+## Exploring Openvoice OS in the upcoming weeks
 
-Openvoice OS is integrated into the project to provide voice assistant capabilities. It leverages various open-source tools and libraries to enable voice recognition and response generation.
-
-### Setup
-
-To set up Openvoice OS, follow the instructions in the `openvoice-os` directory.
-
-### Usage
-
-Once set up, you can interact with the voice assistant through the provided interface in the frontend.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+Openvoice OS provides a self-hosted voice assistant backend for speech recognition and responses.
