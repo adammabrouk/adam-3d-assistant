@@ -15,7 +15,7 @@ Your datacenter is composed of:
 
 ### 🧠 Compute
 - 4× Intel NUCs (reconditioned)
-- 1× Raspberry Pi 5 + AI Hat Kit (workload offloading, e.g., audio inference)
+- 1× Raspberry Pi 5 + AI Hat Kit (Optimized for CNN inference acceleration)
 
 ### 🗄️ Storage
 - 1× Reconditioned QNAP NAS with:
