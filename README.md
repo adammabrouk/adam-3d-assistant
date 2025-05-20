@@ -2,6 +2,9 @@
 
 This project is a homelab setup with k3s deployed, and various components including a 3D assistant in three.js, openvoice os, and more.
 
+<img src="static/photos/IMG_0966.HEIC" alt="IMG_0966" style="display: inline-block; width: 45%; margin-right: 5%;" />
+<img src="static/photos/IMG_0976.heic" alt="IMG_0976" style="display: inline-block; width: 45%;" />
+
 ## Project Structure
 
 The project is structured to isolate different components for better organization and maintainability. Below is an overview of the project structure:
