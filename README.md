@@ -11,7 +11,7 @@ This project is a homelab edge datacenter with `k3s` deployed, hosting a voice-e
 
 ## 🧱 Hardware & Edge Datacenter Composition
 
-Your datacenter is composed of:
+This Mini-Datacenter is composed of:
 
 ### 🧠 Compute
 - 4× Intel NUCs (reconditioned)
